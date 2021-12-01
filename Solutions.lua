@@ -5780,6 +5780,354 @@ movement:Element("Slider", "speed", {min = 0, max = 300, default = 40})
 movement:Element("ToggleKeybind", "jump bug") 
 movement:Element("ToggleKeybind", "edge jump") 
 movement:Element("ToggleKeybind", "edge bug") 
+movement:Element("Toggle", "keystrokes", {}, function(tbl)
+	if tbl.Toggle then
+			 local ScreenGuiKey = Instance.new("ScreenGui")
+local W = Instance.new("TextLabel")
+local A = Instance.new("TextLabel")
+local S = Instance.new("TextLabel")
+local D = Instance.new("TextLabel")
+local E = Instance.new("TextLabel")
+local R = Instance.new("TextLabel")
+local _ = Instance.new("TextLabel")
+local _2 = Instance.new("TextLabel")
+local _3 = Instance.new("TextLabel")
+local _4 = Instance.new("TextLabel")
+local _5 = Instance.new("TextLabel")
+local _6 = Instance.new("TextLabel")
+
+
+ScreenGuiKey.Parent = game.CoreGui
+ScreenGuiKey.Name = "keystrokess"
+
+W.Name = "W"
+W.Parent = ScreenGuiKey
+W.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+W.BackgroundTransparency = 1.000
+W.Position = UDim2.new(0.488053292, 0, 0.728395104, 0)
+W.Size = UDim2.new(0, 29, 0, 28)
+W.Visible = false
+W.Font = Enum.Font.Code
+W.Text = "W"
+W.TextColor3 = Color3.fromRGB(255, 255, 255)
+W.TextSize = 14.000
+W.TextStrokeTransparency = 0.000
+
+_.Name = "_"
+_.Parent = ScreenGuiKey
+_.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_.BackgroundTransparency = 1.000
+_.Position = UDim2.new(0.488053292, 0, 0.728395104, 0)
+_.Size = UDim2.new(0, 29, 0, 28)
+_.Visible = true
+_.Font = Enum.Font.Code
+_.Text = "_"
+_.TextColor3 = Color3.fromRGB(255, 255, 255)
+_.TextSize = 14.000
+_.TextStrokeTransparency = 0.000
+
+A.Name = "A"
+A.Parent = ScreenGuiKey
+A.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+A.BackgroundTransparency = 1.000
+A.Position = UDim2.new(0.453584045, 0, 0.777777791, 0)
+A.Size = UDim2.new(0, 29, 0, 28)
+A.Visible = false
+A.Font = Enum.Font.Code
+A.Text = "A"
+A.TextColor3 = Color3.fromRGB(255, 255, 255)
+A.TextSize = 14.000
+A.TextStrokeTransparency = 0.000
+
+_2.Name = "_2"
+_2.Parent = ScreenGuiKey
+_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_2.BackgroundTransparency = 1.000
+_2.Position = UDim2.new(0.453584045, 0, 0.777777791, 0)
+_2.Size = UDim2.new(0, 29, 0, 28)
+_2.Visible = true
+_2.Font = Enum.Font.Code
+_2.Text = "_"
+_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+_2.TextSize = 14.000
+_2.TextStrokeTransparency = 0.000
+
+S.Name = "S"
+S.Parent = ScreenGuiKey
+S.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+S.BackgroundTransparency = 1.000
+S.Position = UDim2.new(0.488053292, 0, 0.777777791, 0)
+S.Size = UDim2.new(0, 29, 0, 28)
+S.Visible = false
+S.Font = Enum.Font.Code
+S.Text = "S"
+S.TextColor3 = Color3.fromRGB(255, 255, 255)
+S.TextSize = 14.000
+S.TextStrokeTransparency = 0.000
+
+_3.Name = "_3"
+_3.Parent = ScreenGuiKey
+_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_3.BackgroundTransparency = 1.000
+_3.Position = UDim2.new(0.488053292, 0, 0.777777791, 0)
+_3.Size = UDim2.new(0, 29, 0, 28)
+_3.Visible = true
+_3.Font = Enum.Font.Code
+_3.Text = "_"
+_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+_3.TextSize = 14.000
+_3.TextStrokeTransparency = 0.000
+
+D.Name = "D"
+D.Parent = ScreenGuiKey
+D.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+D.BackgroundTransparency = 1.000
+D.Position = UDim2.new(0.522522688, 0, 0.777777791, 0)
+D.Size = UDim2.new(0, 29, 0, 28)
+D.Visible = false
+D.Font = Enum.Font.Code
+D.Text = "D"
+D.TextColor3 = Color3.fromRGB(255, 255, 255)
+D.TextSize = 14.000
+D.TextStrokeTransparency = 0.000
+
+_4.Name = "_4"
+_4.Parent = ScreenGuiKey
+_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_4.BackgroundTransparency = 1.000
+_4.Position = UDim2.new(0.522522688, 0, 0.777777791, 0)
+_4.Size = UDim2.new(0, 29, 0, 28)
+_4.Visible = true
+_4.Font = Enum.Font.Code
+_4.Text = "_"
+_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+_4.TextSize = 14.000
+_4.TextStrokeTransparency = 0.000
+
+E.Name = "E"
+E.Parent = ScreenGuiKey
+E.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+E.BackgroundTransparency = 1.000
+E.Position = UDim2.new(0.453584045, 0, 0.728395045, 0)
+E.Size = UDim2.new(0, 29, 0, 28)
+E.Visible = false
+E.Font = Enum.Font.Code
+E.Text = "C"
+E.TextColor3 = Color3.fromRGB(255, 255, 255)
+E.TextSize = 14.000
+E.TextStrokeTransparency = 0.000
+
+_5.Name = "_5"
+_5.Parent = ScreenGuiKey
+_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_5.BackgroundTransparency = 1.000
+_5.Position = UDim2.new(0.453584045, 0, 0.728395045, 0)
+_5.Size = UDim2.new(0, 29, 0, 28)
+_5.Visible = true
+_5.Font = Enum.Font.Code
+_5.Text = "_"
+_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+_5.TextSize = 14.000
+_5.TextStrokeTransparency = 0.000
+
+R.Name = "R"
+R.Parent = ScreenGuiKey
+R.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+R.BackgroundTransparency = 1.000
+R.Position = UDim2.new(0.522522688, 0, 0.728395045, 0)
+R.Size = UDim2.new(0, 29, 0, 28)
+R.Visible = false
+R.Font = Enum.Font.Code
+R.Text = "J"
+R.TextColor3 = Color3.fromRGB(255, 255, 255)
+R.TextSize = 14.000
+R.TextStrokeTransparency = 0.000
+
+_6.Name = "_6"
+_6.Parent = ScreenGuiKey
+_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_6.BackgroundTransparency = 1.000
+_6.Position = UDim2.new(0.522522688, 0, 0.728395045, 0)
+_6.Size = UDim2.new(0, 29, 0, 28)
+_6.Visible = true
+_6.Font = Enum.Font.Code
+_6.Text = "_"
+_6.TextColor3 = Color3.fromRGB(255, 255, 255)
+_6.TextSize = 14.000
+_6.TextStrokeTransparency = 0.000
+
+
+local UserInputService = game:GetService("UserInputService")
+
+local W1Key = Enum.KeyCode.W
+local A1Key = Enum.KeyCode.A
+local S1Key = Enum.KeyCode.S
+local D1Key = Enum.KeyCode.D
+local E1Key = Enum.KeyCode.LeftControl
+local R1Key = Enum.KeyCode.R
+local SpaceKey = Enum.KeyCode.Space
+
+UserInputService.InputBegan:Connect(function(input)
+	if (input.KeyCode == W1Key) then
+		W.Visible = true
+		_.Visible = false
+	elseif (input.KeyCode == A1Key) then
+		A.Visible = true
+		_2.Visible = false
+	elseif (input.KeyCode == S1Key) then
+		S.Visible = true
+		_3.Visible = false
+	elseif (input.KeyCode == D1Key) then
+		D.Visible = true
+		_4.Visible = false
+	elseif (input.KeyCode == E1Key) then
+		E.Visible = true
+		_5.Visible = false
+	elseif (input.KeyCode == SpaceKey) then
+		R.Visible = true
+		_6.Visible = false
+	end
+end)
+
+UserInputService.InputEnded:Connect(function(input)
+	if (input.KeyCode == W1Key) then
+		W.Visible = false
+		_.Visible = true
+	elseif (input.KeyCode == A1Key) then
+		A.Visible = false
+		_2.Visible = true
+	elseif (input.KeyCode == S1Key) then
+		S.Visible = false
+		_3.Visible = true
+	elseif (input.KeyCode == D1Key) then
+		D.Visible = false
+		_4.Visible = true
+	elseif (input.KeyCode == E1Key) then
+		E.Visible = false
+		_5.Visible = true	
+	elseif (input.KeyCode == SpaceKey) then
+		R.Visible = false
+		_6.Visible = true
+	end
+end)		
+else
+game.CoreGui.keystrokess:Destroy()
+end
+end)
+
+movement:Element("Toggle", "velocity graph", {}, function(tbl)
+if tbl.Toggle then
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local LocalPlayer = Players.LocalPlayer
+local CurrentCamera = workspace.CurrentCamera
+
+local graphLines = {}
+local standardY = workspace.CurrentCamera.ViewportSize.Y-100
+local oldY = standardY
+local oldVelo = 0
+
+local VelocityCounter = Drawing.new("Text")
+VelocityCounter.Text = ""
+VelocityCounter.Center = true
+VelocityCounter.Outline = true
+VelocityCounter.Color = Color3.new(1,1,1)
+VelocityCounter.Font = 3
+VelocityCounter.Position = Vector2.new(CurrentCamera.ViewportSize.X/2, CurrentCamera.ViewportSize.Y-90)
+VelocityCounter.Size = 20
+VelocityCounter.Visible = true
+
+while true do
+RunService.RenderStepped:Wait()
+
+standardY = CurrentCamera.ViewportSize.Y-100
+VelocityCounter.Position = Vector2.new(CurrentCamera.ViewportSize.X/2,CurrentCamera.ViewportSize.Y-90)
+
+if LocalPlayer.Character and LocalPlayer.Character.PrimaryPart then
+if #graphLines >= 1 then
+local max = 100
+
+if #graphLines >= max then
+	graphLines[1]:Remove()
+	
+	local counter = 0
+
+	for i=2,6 do
+		counter = counter + 1.8
+		graphLines[i].Transparency = 1 - (counter/10)
+	end
+	
+	graphLines[2].Transparency = 0.1
+	graphLines[3].Transparency = 0.2
+	graphLines[4].Transparency = 0.4
+	graphLines[5].Transparency = 0.6
+	graphLines[6].Transparency = 0.8
+	
+	table.remove(graphLines, 1)
+end
+
+for i,v in pairs(graphLines) do
+	v.To = v.To - Vector2.new(2,0)
+	v.From = v.From - Vector2.new(2,0)
+end
+end
+
+local totalVelo = (LocalPlayer.Character.PrimaryPart.Velocity * Vector3.new(1, 0, 1)).magnitude
+local graphVelocity = totalVelo * 14.85
+--[[
+if graphVelocity > 300 then
+graphVelocity = 300
+end
+--]]
+VelocityCounter.Color = Color3.new(1,1,1)
+
+if math.floor(totalVelo) < oldVelo then
+VelocityCounter.Color = Color3.new(1,0.5,0.3)
+end
+
+if math.floor(totalVelo) > oldVelo then
+VelocityCounter.Color = Color3.new(0.5,1,0.3)
+end
+--[[
+if math.floor(graphVelocity) == 300 then
+VelocityCounter.Color = Color3.new(1,0.3,0.1)
+end
+--]]
+local color = Color3.new(1,1,1)
+
+--color = Color3.fromHSV(tick()%5/5,1,1)
+
+local line = Drawing.new("Line")
+
+table.insert(graphLines, line)
+
+line.Color = color
+line.Thickness = 2
+line.From = Vector2.new(CurrentCamera.ViewportSize.X/2 + 98, oldY)
+line.To = Vector2.new(CurrentCamera.ViewportSize.X/2 + 100, standardY - (graphVelocity/6.5))
+line.Transparency = 0
+line.Visible = true
+
+if #graphLines >= 8 then
+graphLines[#graphLines-1].Transparency = graphLines[#graphLines-1].Transparency + 0.2
+graphLines[#graphLines-2].Transparency = graphLines[#graphLines-2].Transparency + 0.2
+graphLines[#graphLines-3].Transparency = graphLines[#graphLines-3].Transparency + 0.2
+graphLines[#graphLines-4].Transparency = graphLines[#graphLines-4].Transparency + 0.2
+graphLines[#graphLines-5].Transparency = graphLines[#graphLines-5].Transparency + 0.2
+graphLines[#graphLines-7].Transparency = 1
+end
+
+VelocityCounter.Text = tostring(math.floor(graphVelocity))
+oldY = standardY - (graphVelocity/6.5)
+oldVelo = math.floor(totalVelo)
+end
+end
+else
+VelocityCounter.Visible = false
+graphLines.Visble = false
+print("nigerian test")
+end
+end)			
 
 local chat = misc:Sector("chat", "Left") 
 chat:Element("Toggle", "chat spam", nil, function(tbl) 
@@ -7340,7 +7688,7 @@ mt.__newindex = function(self, i, v)
 
 	return oldNewIndex(self, i, v) 
 end 
-Crosshairs.Scope:GetPropertyChangedSignal("Visible"):Connect(function(current) 
+Crosshairs.Scope:GetPropertyChangedSignal("Visible"):Connect(function(current)
 	if not TBLFIND(values.visuals.effects.removals.Jumbobox, "scope lines") then return end 
 
 	if current ~= false then 
