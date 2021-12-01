@@ -4480,7 +4480,7 @@ end
 
 local Models = game:GetObjects("rbxassetid://7285197035")[1] 
 repeat wait() until Models ~= nil 
-local ChrModels = game:GetObjects("rbxassetid://7642937303")[1] 
+local ChrModels = game:GetObjects("rbxassetid://7951832105")[1] 
 repeat wait() until ChrModels ~= nil 
 
 
@@ -5613,13 +5613,13 @@ local chat = misc:Sector("chat", "Left")
 chat:Element("Toggle", "chat spam", nil, function(tbl) 
 	if tbl.Toggle then 
 		while values.misc.chat["chat spam"].Toggle do 
-			game:GetService("ReplicatedStorage").Events.PlayerChatted:FireServer(values.misc.chat.type.Dropdown == "Winning" and "Join the winning team. Join LunarSense!" or "$$$ I'm using LunarSense lol $$$", false, "Innocent", false, true) 
+			game:GetService("ReplicatedStorage").Events.PlayerChatted:FireServer(values.misc.chat.type.Dropdown == "Winning" and "Join the winning team. Join Vladity.cc!" or values.misc.chat.type.Dropdown == "ratted" and "$$$ My computer was ratted by Virus.solutions lol $$$" or values.misc.chat.type.Dropdown == "MOM" and "I FUCKED UR MOM I FUCKED UR MOM I FUCKED UR MOM" or values.misc.chat.type.Dropdown == "SEMI" and "🐀 RATTED BY SEMI  🐀 ❌ DONT FUCK ❌ WITH 👾BLOXSENSE 👾👨‍🦲USERS👨‍🦲", false, "Innocent", false, true) 
 			wait(values.misc.chat["speed (ms)"].Slider/1000) 
 			 
 		end 
 	end 
 end) 
-chat:Element("Dropdown", "type", {options = {"Winning", "LunarSense"}}) 
+chat:Element("Dropdown", "type", {options = {"Winning", "ratted", "MOM", "SEMI"}}) 
 chat:Element("Slider", "speed (ms)", {min = 15, max = 300, default = 50}) 
 chat:Element("Toggle", "kill say") 
 chat:Element("TextBox", "message", {placeholder = "message"}) 
@@ -7250,7 +7250,7 @@ end)
 LocalPlayer.Status.Kills:GetPropertyChangedSignal("Value"):Connect(function(current) 
 	if current == 0 then return end 
 	if values.misc.chat["kill say"].Toggle then 
-		game:GetService("ReplicatedStorage").Events.PlayerChatted:FireServer(values.misc.chat["message"].Text ~= "#Winning with LunarSense" and values.misc.chat["message"].Text or "Allah is the Man", false, "Innocent", false, true) 
+		game:GetService("ReplicatedStorage").Events.PlayerChatted:FireServer(values.misc.chat["message"].Text ~= "" and values.misc.chat["message"].Text or "Fortnite Balls I'm gay I like boys- I kidnap autistic kids" or "nigga stfu ur black" or "YOU GOT RATTED BY VIRUS.SOLUTION" or "Hello guys welcome to my minecraft lets play today we are gonna find some diamonds", false, "Innocent", false, true) 
 	end 
 end) 
 RayIgnore.ChildAdded:Connect(function(obj) 
