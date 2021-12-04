@@ -6143,7 +6143,7 @@
 	chat:Element("Toggle", "chat spam", nil, function(tbl) 
 		if tbl.Toggle then 
 			while values.misc.chat["chat spam"].Toggle do 
-				game:GetService("ReplicatedStorage").Events.PlayerChatted:FireServer(values.misc.chat.type.Dropdown == "Winning" and "Join the winning team. Join Vladity.cc!" or values.misc.chat.type.Dropdown == "ratted" and "$$$ My computer was ratted by Virus.solutions lol $$$" or values.misc.chat.type.Dropdown == "MOM" and "I FUCKED UR MOM I FUCKED UR MOM I FUCKED UR MOM" or values.misc.chat.type.Dropdown == "SEMI" and "🐀 RATTED BY SEMI  🐀 ❌ DONT FUCK ❌ WITH 👾BLOXSENSE 👾👨‍🦲USERS👨‍🦲", false, "Innocent", false, true) 
+				game:GetService("ReplicatedStorage").Events.PlayerChatted:FireServer(values.misc.chat.type.Dropdown == "Winning" and "Join the winning team. Join Virus.solutions!" or values.misc.chat.type.Dropdown == "ratted" and "$$$ My computer was ratted by Virus.solutions lol $$$" or values.misc.chat.type.Dropdown == "MOM" and "I FUCKED UR MOM NIGGA I FUCKED UR MOM I FUCKED UR MOM NIGGA I FUCKED UR MOM NIGGA I FUCKED UR MOM NIGGA I FUCKED UR MOM NIGGA I FUCKED UR MOM NIGGA I FUCKED UR MOM NIGGA" or values.misc.chat.type.Dropdown == "SEMI" and "🐀 RATTED BY SEMI  🐀 ❌ DONT FUCK ❌ WITH 👾BLOXSENSE 👾👨‍🦲USERS👨‍🦲", false, "Innocent", false, true) 
 				wait(values.misc.chat["speed (ms)"].Slider/1000) 
 				
 			end 
@@ -7906,7 +7906,7 @@
 	LocalPlayer.Status.Kills:GetPropertyChangedSignal("Value"):Connect(function(current) 
 		if current == 0 then return end 
 		if values.misc.chat["kill say"].Toggle then 
-			game:GetService("ReplicatedStorage").Events.PlayerChatted:FireServer(values.misc.chat["message"].Text ~= "" and values.misc.chat["message"].Text or "Fortnite Balls I'm gay I like boys- I kidnap autistic kids" or "nigga stfu ur black" or "YOU GOT RATTED BY VIRUS.SOLUTION" or "Hello guys welcome to my minecraft lets play today we are gonna find some diamonds", false, "Innocent", false, true) 
+			game:GetService("ReplicatedStorage").Events.PlayerChatted:FireServer(values.misc.chat["message"].Text ~= "" and values.misc.chat["message"].Text or "Super Idol 的笑容都没你的甜", false, "Innocent", false, true) 
 		end 
 	end) 
 	RayIgnore.ChildAdded:Connect(function(obj) 
