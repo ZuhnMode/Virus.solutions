@@ -92,20 +92,20 @@
 	function library:New(name) 
 		local menu = {} 
 
-		local Virus = INST("ScreenGui") 
+		local Bloxsense = INST("ScreenGui") 
 		local Menu = INST("ImageLabel") 
 		local TextLabel = INST("TextLabel") 
 		local TabButtons = INST("Frame") 
 		local UIListLayout = INST("UIListLayout") 
 		local Tabs = INST("Frame") 
 
-		Virus.Name = "Virus.solutions" 
-		Virus.ResetOnSpawn = false 
-		Virus.ZIndexBehavior = "Global" 
-		Virus.DisplayOrder = 420133769 
+		Bloxsense.Name = "Virus.solutions" 
+		Bloxsense.ResetOnSpawn = false 
+		Bloxsense.ZIndexBehavior = "Global" 
+		Bloxsense.DisplayOrder = 420133769 
 
 		local UIScale = INST("UIScale") 
-		UIScale.Parent = Virus 
+		UIScale.Parent = Bloxsense 
 
 		function menu:SetScale(scale) 
 			UIScale.Scale = scale 
@@ -115,11 +115,11 @@
 		but.Modal = true 
 		but.Text = "" 
 		but.BackgroundTransparency = 1 
-		but.Parent = Virus 
+		but.Parent = Bloxsense 
 
 		local cursor = INST("ImageLabel") 
 		cursor.Name = "cursor" 
-		cursor.Parent = Virus 
+		cursor.Parent = Bloxsense 
 		cursor.BackgroundTransparency = 1 
 		cursor.Size = UDIM2(0,64,0,64) 
 		cursor.Image = "rbxassetid://7543116323" 
@@ -131,12 +131,12 @@
 		local Mouse = LocalPlayer:GetMouse() 
 
 		game:GetService("RunService").RenderStepped:connect(function() 
-			cursor.Visible = Virus.Enabled 
+			cursor.Visible = Bloxsense.Enabled 
 			cursor.Position = UDIM2(0,Mouse.X-32,0,Mouse.Y-28) 
 		end) 
 
 		Menu.Name = "Menu" 
-		Menu.Parent = Virus 
+		Menu.Parent = Bloxsense 
 		Menu.BackgroundColor3 = COL3RGB(255, 255, 255) 
 		Menu.Position = UDIM2(0.5, -300, 0.5, -300) 
 		Menu.Size = UDIM2(0, 600, 0, 625) 
@@ -147,8 +147,8 @@
 
 		game:GetService("UserInputService").InputBegan:Connect(function(key) 
 			if key.KeyCode == Enum.KeyCode.Insert then 
-				Virus.Enabled = not Virus.Enabled 
-				library.uiopen = Virus.Enabled 
+				Bloxsense.Enabled = not Bloxsense.Enabled 
+				library.uiopen = Bloxsense.Enabled 
 			end 
 		end) 
 
@@ -4152,7 +4152,7 @@
 			return Tab 
 		end 
 
-		Virus.Parent = game.CoreGui 
+		Bloxsense.Parent = game.CoreGui 
 
 		return menu 
 	end 
@@ -4891,6 +4891,7 @@
 	aimbot:Element("Jumbobox", "resolver", {options = {"pitch", "roll", "animation"}})
 	aimbot:Element("Toggle", "delay shot") 
 	aimbot:Element("Toggle", "force hit")
+	aimbot:Element("Toggle", "OldRayMethod")
 	aimbot:Element("Dropdown", "prediction", {options = {"off", "cframe", "velocity"}}) 
 	aimbot:Element("Toggle", "sex package") 
 	aimbot:Element("Toggle", "teammates") 
@@ -5015,7 +5016,7 @@
 	exploits:Element("ToggleKeybind", "four tap")
 	exploits:Element("ToggleKeybind", "five tap")
 	exploits:Element('ToggleKeybind', 'custom tap')
-	exploits:Element('Slider', 'tap amount', {min = 2, max = 10, default = 0})
+	exploits:Element('Slider', 'tap amount', {min = 1, max = 10, default = 0})
 	exploits:Element("ToggleKeybind", "kill all")
 	exploits:Element("Toggle","debris clear",{},function(tbl)
 		while values.rage.exploits["debris clear"].Toggle == true do
@@ -5613,10 +5614,14 @@
 		end 
 	end) 
 	world:Element("ToggleColor", "bullet tracers", {default = {Color = COL3RGB(0, 0, 255)}}) 
+	world:Element("Dropdown", "bullet tracers type", {options = {"Normal","Neon","Beam"}})          
 	world:Element("ToggleColor", "impacts", {default = {Color = COL3RGB(255, 0, 0)}}) 
 	world:Element("ToggleColor", "hit chams", {default = {Color = COL3RGB(0, 0, 255)}}) 
 	world:Element("Dropdown", "hitsound", {options = {"none", "skeet", "neverlose", "rust", "bag", "baimware", "osu", "Tf2", "Tf2 pan", "M55solix", "Slap", "1", "Minecraft", "jojo", "vibe", "supersmash", "epic", "retro", "quek"}}) 
 	world:Element("Slider", "sound volume", {min = 1, max = 5, default = 3}) 
+	world:Element("Slider", "time changer", {min = 0, max = 15, default = 0}, function(tbl) 
+		game.Lighting.ClockTime = tbl.Slider
+		end)                
 	world:Element("Dropdown", "skybox", {options = {"none", "nebula", "Red-Mountain", "vaporwave", "clouds", "Cloudy Skies", "Dark blue", "Pink Daylight", "Night", "Space", "pink vision", "animeskybox", "Alien Red", "Counter Strike City", "Dark City", "Earth", "Mountains", "Old Skybox", "Red Sky", "Red Sky", "Wasteland", "Bobux Generator", "Blue Sky", "Green Sky", "Red Sky"}}, function(tbl)  
 		local sky = tbl.Dropdown 
 		if sky ~= "none" then 
@@ -6255,6 +6260,7 @@
 		["Skateboard"] = "rbxassetid://3725767158",
 		["Crazy Chainsaw"] = "rbxassetid://5822705079",
 		["Summer Slack"] = "rbxassetid://3226145532",
+		["Sleep"] = "rbxassetid://4686925579",
 	}
 
 	local animlist = {}
@@ -7662,24 +7668,63 @@
 			end 
 		end 
 		if method == "FireServer" and self.Name == "HitPart" then 
-			if values.visuals.world["bullet tracers"].Toggle then
-				coroutine.wrap(function()
-					local beam = Instance.new("Part")
-					beam.Anchored = true
-					beam.CanCollide = false
-					beam.Material = Enum.Material.Neon
-					beam.Color = values.visuals.world["bullet tracers"].Color
-					beam.Size = Vector3.new(0.01, 0.1, (Camera.CFrame.Position - args[2]).Magnitude)
-					beam.CFrame = CFrame.new(Camera.CFrame.Position, args[2]) * CFrame.new(0, 0, -beam.Size.Z / 2)
-					beam.Parent = workspace.Debris
-					library:Tween(beam, TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Transparency = 1})
-					wait(2)
-					beam:Destroy()
-				end)()
+			if values.visuals.world["bullet tracers"].Toggle then   
+				if values.visuals.world["bullet tracers type"].Dropdown == "Normal" then   
+					coroutine.wrap(function()      
+						beam = INST("Part")      
+						beam.Anchored = true      
+						beam.CanCollide = false      
+						beam.Material = "ForceField"  
+						beam.Color = values.visuals.world["bullet tracers"].Color      
+						beam.Size = Vec3(0.1, 0.1, (Camera.CFrame.Position - args[2]).Magnitude)      
+						beam.CFrame = CF(Camera.CFrame.Position, args[2]) * CF(0, 0, -beam.Size.Z / 2)      
+						beam.Parent = workspace.Debris      
+						library:Tween(beam, TweenInfo.new(3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Transparency = 1})      
+						wait(1.5)      
+						beam:Destroy()      
+					end)()
+				end
+			end
+			if values.visuals.world["bullet tracers"].Toggle then   
+				if values.visuals.world["bullet tracers type"].Dropdown == "Neon" then   
+					coroutine.wrap(function()      
+						beam = INST("Part")      
+						beam.Anchored = true      
+						beam.CanCollide = false      
+						beam.Material = "Neon"  
+						beam.Color = values.visuals.world["bullet tracers"].Color      
+						beam.Size = Vec3(0.1, 0.1, (Camera.CFrame.Position - args[2]).Magnitude)      
+						beam.CFrame = CF(Camera.CFrame.Position, args[2]) * CF(0, 0, -beam.Size.Z / 2)      
+						beam.Parent = workspace.Debris      
+						library:Tween(beam, TweenInfo.new(3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Transparency = 1})      
+						wait(1.5)      
+						beam:Destroy()      
+					end)()
+				end
+			end
+			if values.visuals.world["bullet tracers"].Toggle then   
+				if values.visuals.world["bullet tracers type"].Dropdown == "Beam" then   
+					coroutine.wrap(function()      
+						beam = INST("Part")      
+						beam.Anchored = true      
+						beam.CanCollide = false      
+						beam.Image = "http://www.roblox.com/asset/?id=1825953680" 
+						beam.Color = values.visuals.world["bullet tracers"].Color      
+						beam.Size = Vec3(0.1, 0.1, (Camera.CFrame.Position - args[2]).Magnitude)      
+						beam.CFrame = CF(Camera.CFrame.Position, args[2]) * CF(0, 0, -beam.Size.Z / 2)      
+						beam.Parent = workspace.Debris      
+						library:Tween(beam, TweenInfo.new(3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Transparency = 1})      
+						wait(1.5)      
+						beam:Destroy()      
+					end)()
+				end
 			end
 			if values.rage.aimbot["force hit"].Toggle then 
 				args[1] = RageTarget 
 				args[2] = RageTarget.Position 
+			end 
+			if values.rage.aimbot["OldRayMethod"].Toggle then 
+				args[8] = 2
 			end 
 			if values.rage.aimbot["prediction"].Dropdown ~= "off" and RageTarget ~= nil then
 				coroutine.wrap(function()
@@ -7770,7 +7815,6 @@
 				end 
 			end 
 		end 
-
 		return oldNamecall(self, unpack(args)) 
 	end 
 	local oldIndex
