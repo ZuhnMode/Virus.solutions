@@ -1,3 +1,10 @@
+    StarterGui:SetCore('SendNotification', {
+	Title = 'Virus.solutions',
+	Text = 'Successfully Injected!',
+	Duration = 5,
+    Icon = "rbxthumb://type=Asset&id=8056423386&w=150&h=150"
+    })
+	
 	getgenv().values = {}
 	local library = {} 
 	local Signal = loadstring(game:HttpGet("https://raw.githubusercontent.com/Quenty/NevermoreEngine/version2/Modules/Shared/Events/Signal.lua"))()
@@ -139,7 +146,7 @@
 		Menu.Parent = Bloxsense 
 		Menu.BackgroundColor3 = COL3RGB(255, 255, 255) 
 		Menu.Position = UDIM2(0.5, -300, 0.5, -300) 
-		Menu.Size = UDIM2(0, 600, 0, 625) 
+		Menu.Size = UDIM2(0, 600, 0, 690) 
 		Menu.Image = "http://www.roblox.com/asset/?id=7542166008" 
 		Menu.BorderSizePixel = 0 
 
@@ -6148,7 +6155,7 @@
 	chat:Element("Toggle", "chat spam", nil, function(tbl) 
 		if tbl.Toggle then 
 			while values.misc.chat["chat spam"].Toggle do 
-				game:GetService("ReplicatedStorage").Events.PlayerChatted:FireServer(values.misc.chat.type.Dropdown == "Winning" and "Join the winning team. Join Virus.solutions!" or values.misc.chat.type.Dropdown == "ratted" and "$$$ My computer was ratted by Virus.solutions lol $$$" or values.misc.chat.type.Dropdown == "MOM" and "I FUCKED UR MOM NIGGA I FUCKED UR MOM I FUCKED UR MOM NIGGA I FUCKED UR MOM NIGGA I FUCKED UR MOM NIGGA I FUCKED UR MOM NIGGA I FUCKED UR MOM NIGGA I FUCKED UR MOM NIGGA" or values.misc.chat.type.Dropdown == "SEMI" and "🐀 RATTED BY SEMI  🐀 ❌ DONT FUCK ❌ WITH 👾BLOXSENSE 👾👨‍🦲USERS👨‍🦲", false, "Innocent", false, true) 
+				game:GetService("ReplicatedStorage").Events.PlayerChatted:FireServer(values.misc.chat.type.Dropdown == "Winning" and "Join the winning team. Join Virus.solutions!" or values.misc.chat.type.Dropdown == "ratted" and "$$$ My computer was ratted by Virus.solutions lol $$$" or values.misc.chat.type.Dropdown == "MOM" and "I FUCKED UR MOM NIGGA I FUCKED UR MOM I FUCKED UR MOM NIGGA I FUCKED UR MOM NIGGA I FUCKED UR MOM NIGGA I FUCKED UR MOM NIGGA I FUCKED UR MOM NIGGA I FUCKED UR MOM NIGGA" or values.misc.chat.type.Dropdown == "SEMI" and "ðŸ€ RATTED BY SEMI  ðŸ€ âŒ DONT FUCK âŒ WITH ðŸ‘¾BLOXSENSE ðŸ‘¾ðŸ‘¨â€ðŸ¦²USERSðŸ‘¨â€ðŸ¦²", false, "Innocent", false, true) 
 				wait(values.misc.chat["speed (ms)"].Slider/1000) 
 				
 			end 
@@ -7950,7 +7957,7 @@
 	LocalPlayer.Status.Kills:GetPropertyChangedSignal("Value"):Connect(function(current) 
 		if current == 0 then return end 
 		if values.misc.chat["kill say"].Toggle then 
-			game:GetService("ReplicatedStorage").Events.PlayerChatted:FireServer(values.misc.chat["message"].Text ~= "" and values.misc.chat["message"].Text or "Super Idol 的笑容都没你的甜", false, "Innocent", false, true) 
+			game:GetService("ReplicatedStorage").Events.PlayerChatted:FireServer(values.misc.chat["message"].Text ~= "" and values.misc.chat["message"].Text or "Super Idol çš„ç¬‘å®¹éƒ½æ²¡ä½ çš„ç”œ", false, "Innocent", false, true) 
 		end 
 	end) 
 	RayIgnore.ChildAdded:Connect(function(obj) 
@@ -8841,3 +8848,10 @@
 			end
 		end)
 	end
+
+	    StarterGui:SetCore('SendNotification', {
+		Title = 'Virus.solutions',
+		Text = 'I hope that u have a great game!',
+		Duration = 5,
+		Icon = "rbxthumb://type=Asset&id=8056423386&w=150&h=150"
+		})
